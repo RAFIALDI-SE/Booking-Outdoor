@@ -6,11 +6,11 @@
     </div>
 
     <div class="list-group list-group-flush mt-3">
-        <a href="#" class="list-group-item @if(Route::is('admin_index')) active @endif">
+        <a href="{{route('admin_index')}}" class="list-group-item @if(Route::is('admin_index')) active @endif">
             <i class="fas fa-tachometer-alt me-2"></i> Dashboard
         </a>
 
-        <a href="#" class="list-group-item @if(Route::is('slider_*')) active @endif">
+        <a href="{{route('slider_index')}}" class="list-group-item @if(Route::is('slider_*')) active @endif">
             <i class="fas fa-images me-2"></i> Slider
         </a>
 
