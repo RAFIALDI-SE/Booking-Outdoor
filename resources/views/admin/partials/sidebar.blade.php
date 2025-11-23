@@ -14,7 +14,7 @@
             <i class="fas fa-images me-2"></i> Slider
         </a>
 
-        <a href="#" class="list-group-item @if(Route::is('categories_*')) active @endif">
+        <a href="{{route('categories_index')}}" class="list-group-item @if(Route::is('categories_*')) active @endif">
             <i class="fas fa-list me-2"></i> Kategori
         </a>
 
