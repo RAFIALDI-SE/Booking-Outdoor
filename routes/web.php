@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +20,10 @@ Route::post('/sliders', [SliderController::class, 'store'])->name('slider_store'
 Route::get('/sliders/{slider}/edit', [SliderController::class, 'edit'])->name('slider_edit');
 Route::put('/sliders/{slider}', [SliderController::class, 'update'])->name('slider_update');
 Route::delete('/sliders/{slider}/delete', [SliderController::class, 'destroy'])->name('slider_destroy');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories_index');
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories_create');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories_store');
+Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories_edit');
+Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories_update');
+Route::delete('/categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories_destroy');
