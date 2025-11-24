@@ -64,7 +64,7 @@
             </div>
 
             <div class="text-center mt-5">
-                <a href="#" class="btn btn-light bg-primary-custom text-white px-5 py-2 rounded-lg fw-bold">
+                <a href="{{ route('products_all') }}" class="btn btn-light bg-primary-custom text-white px-5 py-2 rounded-lg fw-bold">
                     View All
                 </a>
             </div>
