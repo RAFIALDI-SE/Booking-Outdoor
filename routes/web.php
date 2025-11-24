@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/products/all', [ProductController::class, 'all_products'])->name('products_all');
 
 
 Route::get('/dashboard', function () {

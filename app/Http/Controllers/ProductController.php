@@ -82,4 +82,24 @@ class ProductController extends Controller
         return redirect()->route('products_index')->with('success', 'Produk berhasil dihapus!');
     }
 
+    public function all_products(Request $request)
+    {
+        $query = Product::with('category');
+
+        // 🔍 Fitur search berdasarkan nama produk
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        // 🏷️ Filter by kategori
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+
+        $products = $query->orderBy('name')->paginate(9);
+        $categories = \App\Models\Category::all();
+
+        return view('members.product', compact('products', 'categories'));
+    }
+
 }
