@@ -30,7 +30,7 @@
             <i class="fas fa-history me-2"></i> Pengembalian
         </a>
 
-        <a href="#" class="list-group-item @if(Route::is('contents_*')) active @endif">
+        <a href="{{route('contents_index')}}" class="list-group-item @if(Route::is('contents_*')) active @endif">
             <i class="fas fa-file-alt me-2"></i> Konten
         </a>
     </div>
