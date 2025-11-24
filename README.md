@@ -9,7 +9,9 @@
 
 Link Figma
 
--   https://www.figma.com/design/92i1c8IxegfVYQdp6JVNOS/RI-WIREFRAME-9?node-id=0-1&p=f&t=oiUM8HwlvLZksZcA-0
+
+
+-   https://www.figma.com/design/nbXhP7a4db7YwdkHtnBssv/FUNVENTURE-OUTDOOR?node-id=0-1&p=f&fuid=1453580864215151605
 
 Wroksheet
 
@@ -22,3 +24,13 @@ Low Fidelity Prototype
 Tabel pembagian tugas
 
 -
+
+### Pembagian Tugas & Fitur (Task Distribution)
+
+| Nama Pengembang | Fitur (Modul Admin) | Fitur (Modul Members) |
+| :--- | :--- | :--- |
+| **Rafi** | • View Dashboard Admin<br>• Manage Slider (CRUD)<br>• Manage Category Produk (CRUD)<br>• Manage Produk (CRUD)<br>• Manage Content (CRUD) | • Fitur Cart/Keranjang |
+| **Aldi** | • Check Pengembalian Barang<br>• View Riwayat Transaksi<br>• Fitur Logout Admin | • Fitur Login (Members/Admin)<br>• Integrasi Payment Gateway (Midtrans) |
+| **Alpan** | - | • Fitur Register<br>• Profile Page<br>• Detail Page Produk<br>• History Detail Payment<br>• Fitur Logout Members |
+| **Agym** | - | • View Onboarding/Landing Page<br>• Home Page<br>• View All Produk Page<br>• Search Bar & Filter Produk<br>• History List Payment |
+
