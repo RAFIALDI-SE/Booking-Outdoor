@@ -6,8 +6,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\OnboardingController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 Route::get('/dashboard', function () {
