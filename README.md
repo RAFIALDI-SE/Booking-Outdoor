@@ -21,10 +21,6 @@ Low Fidelity Prototype
 
 -
 
-Tabel pembagian tugas
-
--
-
 ### Pembagian Tugas & Fitur (Task Distribution)
 
 | Nama Pengembang | Fitur (Modul Admin) | Fitur (Modul Members) |
