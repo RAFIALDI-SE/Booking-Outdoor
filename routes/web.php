@@ -5,10 +5,9 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\OnboardingController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
 
 
 Route::get('/dashboard', function () {
