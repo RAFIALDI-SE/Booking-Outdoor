@@ -18,7 +18,7 @@
             <i class="fas fa-list me-2"></i> Kategori
         </a>
 
-        <a href="#" class="list-group-item @if(Route::is('products_*')) active @endif">
+        <a href="{{route('products_index')}}" class="list-group-item @if(Route::is('products_*')) active @endif">
             <i class="fas fa-box me-2"></i> Produk
         </a>
 
