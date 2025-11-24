@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +36,10 @@ Route::post('/products', [ProductController::class, 'store'])->name('products_st
 Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products_edit');
 Route::put('/products/{product}', [ProductController::class, 'update'])->name('products_update');
 Route::delete('/products/{product}/delete', [ProductController::class, 'destroy'])->name('products_destroy');
+
+Route::get('/contents', [ContentController::class, 'index'])->name('contents_index');
+Route::get('/contents/create', [ContentController::class, 'create'])->name('contents_create');
+Route::post('/contents', [ContentController::class, 'store'])->name('contents_store');
+Route::get('/contents/{content}/edit', [ContentController::class, 'edit'])->name('contents_edit');
+Route::put('/contents/{content}', [ContentController::class, 'update'])->name('contents_update');
+Route::delete('/contents/{content}/delete', [ContentController::class, 'destroy'])->name('contents_destroy');
