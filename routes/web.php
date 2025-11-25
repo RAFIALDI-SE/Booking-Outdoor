@@ -15,6 +15,7 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginStore'])->name('loginStore');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerStore'])->name('registerStore');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/products/all', [ProductController::class, 'all_products'])->name('products_all');

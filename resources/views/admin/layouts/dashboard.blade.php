@@ -208,7 +208,7 @@
                 <div class="d-flex justify-content-center gap-4 mt-4">
 
                     {{-- Tombol YA (Logout Submit) --}}
-                    <form action="#" method="POST" class="d-inline">
+                    <form action="{{route('logout')}}" method="POST" class="d-inline">
                         @csrf
                         <button type="submit" class="btn btn-modal-yes fw-bold">
                             Ya
