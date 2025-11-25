@@ -7,8 +7,11 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'registerStore'])->name('registerStore');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/products/all', [ProductController::class, 'all_products'])->name('products_all');
