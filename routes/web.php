@@ -8,6 +8,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -16,6 +17,8 @@ Route::post('/register', [AuthController::class, 'registerStore'])->name('regist
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/products/all', [ProductController::class, 'all_products'])->name('products_all');
 
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile_edit');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile_update');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
