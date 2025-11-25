@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function login() {
+        return view('auth.login');
+    }
+
     public function register() {
 
         return view('auth.register');
@@ -38,5 +42,26 @@ class AuthController extends Controller
         ]);
 
         return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
+    }
+
+     public function loginStore(Request $request)
+    {
+        $request->validate([
+            'email'    => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
+        if (Auth::attempt($request->only('email', 'password'))) {
+            $user = Auth::user();
+
+            // Redirect berdasarkan role
+            if ($user->is_admin) {
+                return redirect()->route('admin_index');
+            } else {
+                return redirect()->route('home');
+            }
+        }
+
+        return back()->withErrors(['email' => 'Email atau password salah.']);
     }
 }
