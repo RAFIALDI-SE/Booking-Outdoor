@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="text-center mt-3 small border-top border-white border-opacity-25 pt-3">
-            <p class="mb-0">Copyright Jawatimuroutdoor © 2025. All Right Reserved.</p>
+            <p class="mb-0">Copyright FunventureOutdoor © 2025. All Right Reserved.</p>
         </div>
     </div>
 </footer>
