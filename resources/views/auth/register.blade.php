@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Jawatimur Outdoor</title>
+    <title>Register - Funventure Outdoor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -26,7 +26,7 @@
 </head>
 <body>
     <div class="register-container">
-        <img src="{{ url('storage/jawatimuroutdoor-logo-colorful.png') }}" alt="Logo Jawatimur Outdoor" class="logo-img">
+        <img src="{{ url('storage/FunventureLogo.png') }}" alt="Logo Funventure Outdoor" class="logo-img">
         <h2 class="mb-4">Buat Akun Baru</h2>
 
         {{-- Error Validasi --}}
