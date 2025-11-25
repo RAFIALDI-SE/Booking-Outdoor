@@ -37,10 +37,10 @@ https://www.figma.com/design/nbXhP7a4db7YwdkHtnBssv/FUNVENTURE-OUTDOOR?node-id=0
 
 | Nama Pengembang | Fitur (Modul Admin) | Fitur (Modul Members) |
 |-----------------|----------------------|------------------------|
-| **Rafi** | • View Dashboard Admin<br>• Manage Slider (CRUD)<br>• Manage Category Produk (CRUD)<br>• Manage Produk (CRUD)<br>• Manage Content (CRUD) | • Fitur Cart/Keranjang |
-| **Aldi** | • Check Pengembalian Barang<br>• View Riwayat Transaksi<br>• Fitur Logout Admin | • Fitur Login (Members/Admin)<br>• Integrasi Payment Gateway (Midtrans) |
-| **Alpan** | - | • Fitur Register<br>• Profile Page<br>• Detail Page Produk<br>• History Detail Payment<br>• Fitur Logout Members |
-| **Agym** | - | • View Onboarding/Landing Page<br>• Home Page<br>• View All Produk Page<br>• Search Bar & Filter Produk<br>• History List Payment |
+| **Rafi Aldi Putra** | • View Dashboard Admin<br>• Manage Slider (CRUD)<br>• Manage Category Produk (CRUD)<br>• Manage Produk (CRUD)<br>• Manage Content (CRUD) | • Fitur Cart/Keranjang |
+| **Aldi Firman Saputra** | • Check Pengembalian Barang<br>• View Riwayat Transaksi<br>• Fitur Logout Admin | • Fitur Login (Members/Admin)<br>• Integrasi Payment Gateway (Midtrans) |
+| **Muhammad Alfan Mufti Yazid** | - | • Fitur Register<br>• Profile Page<br>• Detail Page Produk<br>• History Detail Payment<br>• Fitur Logout Members |
+| **Agymnastiar Lintang Raditho** | - | • View Onboarding/Landing Page<br>• Home Page<br>• View All Produk Page<br>• Search Bar & Filter Produk<br>• History List Payment |
 
 ---
 
