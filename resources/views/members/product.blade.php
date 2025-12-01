@@ -30,6 +30,50 @@
 
     {{-- Section: Filter dan Search --}}
     
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-10">
+            <form method="GET" action="{{ route('products_all') }}" class="row g-3 align-items-center">
+
+                {{-- Search Input Group dengan Ikon sebagai Button --}}
+                <div class="col-md-6 col-lg-7">
+                    <div class="input-group input-group-lg">
+                        <input
+                            type="text"
+                            name="search"
+                            value="{{ request('search') }}"
+                            placeholder="Cari produk..."
+                            class="form-control"
+                        >
+                        {{-- Tombol Search Ikon --}}
+                        <button
+                            type="submit"
+                            class="btn text-white"
+                            style="background-color: #016B61; border-color: #016B61;"
+                        >
+                            {{-- Asumsi Font Awesome dimuat di layout --}}
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                {{-- Filter Kategori --}}
+                <div class="col-md-6 col-lg-5">
+                    <select
+                        name="category_id"
+                        class="form-select form-select-lg"
+                        onchange="this.form.submit()"
+                    >
+                        <option value="">Semua Kategori</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <hr class="mb-4">
 
