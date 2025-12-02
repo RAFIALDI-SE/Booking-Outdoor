@@ -22,6 +22,7 @@ Route::get('/products/all', [ProductController::class, 'all_products'])->name('p
 
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile_edit');
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile_update');
+Route::get('/products/{id}/detail', [ProductController::class, 'show'])->name('products_detail');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
