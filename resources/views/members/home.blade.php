@@ -54,7 +54,7 @@
                                 <h3 class="h4 fw-bold">{{ $product->name }}</h3>
                                 <p class="lead fw-semibold mb-2">Stok {{ $product->stock ?? 0 }}</p>
 
-                                <a href="#" class="btn w-100 product-card-detail-btn text-white py-2 rounded-3 fw-bold">
+                                <a href="{{route('products_detail', $product->id)}}" class="btn w-100 product-card-detail-btn text-white py-2 rounded-3 fw-bold">
                                     Lihat Detail
                                 </a>
                             </div>

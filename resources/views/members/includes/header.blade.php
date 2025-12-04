@@ -36,7 +36,7 @@
                             <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" alt="Profile" class="rounded-circle me-2 border border-white" style="width: 2rem; height: 2rem; object-fit: cover;">
                         @else
                             {{-- Default image jika tidak ada profile_picture --}}
-                            <img src="{{ asset('storage/profile.jpg') }}" alt="Default Profile" class="rounded-circle me-2 border border-white" style="width: 2rem; height: 2rem; object-fit: cover;">
+                            <img src="{{ asset('storage/default-profile.png') }}" alt="Default Profile" class="rounded-circle me-2 border border-white" style="width: 2rem; height: 2rem; object-fit: cover;">
                         @endif
 
                         <span class="text-white me-2">Hi, {{ explode(' ', Auth::user()->name)[0] }}</span>
@@ -46,7 +46,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
 
                         {{-- Item Dropdown sesuai Group 31.png --}}
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2" style="width: 1rem;"></i> Profil</a></li>
+                        <li><a class="dropdown-item" href="{{route('profile_edit', )}}"><i class="fas fa-user me-2" style="width: 1rem;"></i> Profil</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-shopping-basket me-2" style="width: 1rem;"></i> Keranjang</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2" style="width: 1rem;"></i> Riwayat</a></li>
                         <li><hr class="dropdown-divider"></li>

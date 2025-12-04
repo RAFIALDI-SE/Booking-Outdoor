@@ -102,9 +102,9 @@
                 {{-- Login/Register --}}
                 <div class="d-flex flex-column flex-md-row ms-md-auto py-2 py-md-0 align-items-md-center gap-2">
                     {{-- Tombol Login dengan class hover baru --}}
-                    <a href="#" class="btn btn-sm text-white btn-login-custom">Login</a>
+                    <a href="{{route('login')}}" class="btn btn-sm text-white btn-login-custom">Login</a>
                     {{-- Tombol Register dengan class hover baru --}}
-                    <a href="#" class="btn btn-sm btn-register-custom rounded">Register</a>
+                    <a href="{{route('register')}}" class="btn btn-sm btn-register-custom rounded">Register</a>
                 </div>
             </div>
         </nav>

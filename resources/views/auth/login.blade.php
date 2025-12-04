@@ -27,7 +27,7 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="{{ url('storage/jawatimuroutdoor-logo-colorful.png') }}" alt="Logo Jawatimur Outdoor" class="logo-img">
+        <img src="{{ url('storage/FunventureLogo.png') }}" alt="Logo Jawatimur Outdoor" class="logo-img">
         <h2 class="mb-4">Masuk ke Akun Anda</h2>
 
         {{-- Pesan Success dari Register atau Logout --}}

@@ -100,7 +100,7 @@
         <a href="{{route('onboarding')}}" class="link-secondary-custom d-block mb-3">Kembali</a>
 
         <p class="register-text">Sudah Punya Akun?
-            <a href="#" class="link-secondary-custom fw-bold">Masuk Sini</a>
+            <a href="{{route('login')}}" class="link-secondary-custom fw-bold">Masuk Sini</a>
         </p>
     </div>
 
