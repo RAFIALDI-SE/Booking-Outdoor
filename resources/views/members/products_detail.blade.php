@@ -68,7 +68,7 @@
                 <div class="d-flex flex-column gap-3">
 
                     {{-- Tombol Add to Cart --}}
-                    <form action="#" method="POST" class="d-inline-block w-100">
+                    <form action="{{route('cart_add', $product->id)}}" method="POST" class="d-inline-block w-100">
                         @csrf
                         <input type="hidden" name="quantity" value="1">
 

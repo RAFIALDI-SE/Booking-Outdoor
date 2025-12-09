@@ -24,7 +24,7 @@
                 </ul>
             @endif
 
-            {{-- 👇 KONTEN PROFILE DROPDOWN (DIPERBAIKI) --}}
+
             <div class="d-flex ms-md-auto py-2 py-md-0 align-items-center">
                 @auth
                 <div class="dropdown">
@@ -47,7 +47,7 @@
 
                         {{-- Item Dropdown sesuai Group 31.png --}}
                         <li><a class="dropdown-item" href="{{route('profile_edit', )}}"><i class="fas fa-user me-2" style="width: 1rem;"></i> Profil</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-shopping-basket me-2" style="width: 1rem;"></i> Keranjang</a></li>
+                        <li><a class="dropdown-item" href="{{route('cart_index')}}"><i class="fas fa-shopping-basket me-2" style="width: 1rem;"></i> Keranjang</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2" style="width: 1rem;"></i> Riwayat</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
@@ -67,7 +67,7 @@
                     <a href="#" class="btn btn-sm text-white px-3 py-1 rounded-pill">Daftar</a>
                 @endauth
             </div>
-            {{-- 👆 END KONTEN PROFILE --}}
+
         </div>
     </nav>
 </header>
