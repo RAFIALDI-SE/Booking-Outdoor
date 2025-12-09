@@ -8,6 +8,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\OnboardingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
@@ -23,6 +24,12 @@ Route::get('/products/all', [ProductController::class, 'all_products'])->name('p
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile_edit');
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile_update');
 Route::get('/products/{id}/detail', [ProductController::class, 'show'])->name('products_detail');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart_index');
+Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart_update');
+Route::post('/cart/rent-days', [CartController::class, 'updateDays'])->name('cart_updateDays');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart_add');
+Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart_delete');
 
 Route::get('/dashboard', function () {
     return view('admin.index');
