@@ -14,4 +14,9 @@ class PaymentLog extends Model
     {
         return $this->belongsTo(Transaction::class);
     }
+
+    protected $casts = [
+        'response_json' => 'array',
+    ];
+
 }

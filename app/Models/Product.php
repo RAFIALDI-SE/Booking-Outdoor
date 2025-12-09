@@ -32,4 +32,17 @@ class Product extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+     /**
+     * Kurangi stok produk.
+     */
+    public function reduceStock($quantity)
+    {
+        if ($this->stock >= $quantity) {
+            $this->stock -= $quantity;
+            $this->save();
+            return true;
+        }
+        return false; // Gagal mengurangi stok
+    }
 }

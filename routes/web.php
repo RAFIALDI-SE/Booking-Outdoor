@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BookingController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -30,6 +31,8 @@ Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart_
 Route::post('/cart/rent-days', [CartController::class, 'updateDays'])->name('cart_updateDays');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart_add');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart_delete');
+
+Route::post('/checkout/store', [BookingController::class, 'checkoutStore'])->name('checkoutStore');
 
 Route::get('/dashboard', function () {
     return view('admin.index');

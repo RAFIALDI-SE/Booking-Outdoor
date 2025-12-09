@@ -145,4 +145,53 @@
 
 @endsection
 
+@section('scripts')
+
+<script
+    src="https://app.sandbox.midtrans.com/snap/snap.js"
+    data-client-key="{{ config('services.midtrans.clientKey') }}">
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const payBtn = document.getElementById('payButton');
+    if (!payBtn) return;
+
+    payBtn.addEventListener("click", function () {
+
+        fetch("{{ route('checkoutStore') }}", {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+
+            if (!data.snap_token) {
+                alert(data.error ?? "Gagal memproses pembayaran");
+                return;
+            }
+
+            snap.pay(data.snap_token, {
+                onSuccess: function() {
+                    window.location.href = "{{ route('home') }}";
+                },
+                onPending: function() {
+                    window.location.href = "{{ route('home') }}";
+                },
+                onError: function() {
+                    alert('Pembayaran gagal!');
+                }
+            });
+
+        });
+
+    });
+});
+</script>
+
+@endsection
+
 
