@@ -17,18 +17,18 @@
             <div class="d-flex flex-column align-items-center mb-3">
                 {{-- Foto Profil --}}
                 {{-- Ukuran dikurangi (100px) --}}
-                <img src="#"
+                <img src="{{ asset('storage/' . $user->profile_picture) }}"
                     alt="Foto Profil"
                     class="rounded-circle mb-2"
                     style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #70B2B2;"> {{-- Border dikurangi --}}
 
                 <h2 class="h5 fw-bold mt-2" style="color: #ffffff;">Profil Pengguna</h2> {{-- Ukuran Judul dikurangi (h5) --}}
-                <p class="text-light mb-1" style="font-size: 0.9rem;">alfan</p>
+                <p class="text-light mb-1" style="font-size: 0.9rem;">{{ $user->name }}</p>
 
                 {{-- Informasi Statis (Blok) --}}
                 <div class="text-center text-light mt-3" style="max-width: 300px; font-size: 0.9rem;">
-                    <p class="mb-1"><strong>Nama Lengkap :</strong> alfan mufti</p>
-                    <p class="mb-1"><strong>Alamat Email :</strong> alfan@gmail.com </p>
+                    <p class="mb-1"><strong>Nama Lengkap :</strong> {{ $user->name }}</p>
+                    <p class="mb-1"><strong>Alamat Email :</strong> {{ $user->email }}</p>
                     <p class="mb-1"><strong>Role :</strong> Member</p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                         <input type="text"
                             name="name"
                             id="name"
-                            value="#"
+                            value="{{ old('name', $user->name) }}"
                             class="form-control form-control-sm" {{-- form-control-sm --}}
                             style="background-color: #068478; border-color: #70B2B2; color: #fff;"
                             required>
@@ -68,7 +68,7 @@
                         <input type="text"
                             name="phone_number"
                             id="phone_number"
-                            value="#"
+                            value="{{ old('phone_number', $user->phone_number) }}"
                             class="form-control form-control-sm" {{-- form-control-sm --}}
                             style="background-color: #068478; border-color: #70B2B2; color: #fff;">
                     </div>
@@ -108,8 +108,8 @@
                         {{-- Kosong --}}
                     </div>
 
-                    <input type="hidden" name="email" value="#">
-                    <input type="hidden" name="gender" value="#">
+                    <input type="hidden" name="email" value="{{ $user->email }}">
+                    <input type="hidden" name="gender" value="{{ $user->gender }}">
 
                 </div>
 
