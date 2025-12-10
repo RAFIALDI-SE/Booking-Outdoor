@@ -33,6 +33,8 @@ Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart_add');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart_delete');
 
 Route::post('/checkout/store', [BookingController::class, 'checkoutStore'])->name('checkoutStore');
+Route::get('/payment/history/{code}', [BookingController::class, 'historyDetail'])->name('history_payment_detail');
+
 
 Route::get('/dashboard', function () {
     return view('admin.index');

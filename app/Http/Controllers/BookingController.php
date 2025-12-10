@@ -125,4 +125,28 @@ class BookingController extends Controller
             })->toArray()
         ];
     }
+
+    /**
+     * Menampilkan detail pembayaran spesifik.
+     *
+     * @param string $code Kode transaksi (code)
+     * @return \Illuminate\View\View
+     */
+    public function historyDetail($code)
+    {
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+
+
+        $transaction = $user->transactions()
+                            ->where('code', $code)
+                            ->with('items.product')
+                            ->firstOrFail();
+
+        $canRepay = $transaction->payment_status === 'pending' &&
+                    ($transaction->payment_expired_at && now()->lessThan($transaction->payment_expired_at));
+
+        return view('members.history_payment_detail', compact('transaction', 'canRepay'));
+    }
+
 }
