@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\TransactionController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -69,3 +70,6 @@ Route::post('/contents', [ContentController::class, 'store'])->name('contents_st
 Route::get('/contents/{content}/edit', [ContentController::class, 'edit'])->name('contents_edit');
 Route::put('/contents/{content}', [ContentController::class, 'update'])->name('contents_update');
 Route::delete('/contents/{content}/delete', [ContentController::class, 'destroy'])->name('contents_destroy');
+
+Route::get('/transaction', [TransactionController::class, 'index'])->name('admin_transation_index');
+Route::get('/transaction/{code}', [TransactionController::class, 'show'])->name('admin_transation_show');
