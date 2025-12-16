@@ -26,7 +26,7 @@
             <i class="fas fa-exchange-alt me-2"></i> Transaksi
         </a>
 
-        <a href="#" class="list-group-item">
+        <a href="{{route('returns_index')}}" class="list-group-item @if(Route::is('returns_*')) active @endif">
             <i class="fas fa-history me-2"></i> Pengembalian
         </a>
 

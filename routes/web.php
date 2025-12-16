@@ -12,6 +12,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ReturnController;
 
 Route::get('/', [OnboardingController::class, 'index'])->name('onboarding');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -73,3 +74,10 @@ Route::delete('/contents/{content}/delete', [ContentController::class, 'destroy'
 
 Route::get('/transaction', [TransactionController::class, 'index'])->name('admin_transation_index');
 Route::get('/transaction/{code}', [TransactionController::class, 'show'])->name('admin_transation_show');
+
+Route::get('/return/index', [ReturnController::class, 'index'])->name('returns_index');
+Route::get('/check/{code}', [ReturnController::class, 'checkItems'])->name('returns_check_items');
+Route::post('/process/{code}', [ReturnController::class, 'processCheck'])->name('returns_process_check');
+Route::get('/fine', [ReturnController::class, 'inputFine'])->name('returns_input_fine');
+Route::post('/finalize-fine', [ReturnController::class, 'finalizeFine'])->name('returns_finalize_fine');
+Route::get('/report/{code}', [ReturnController::class, 'report'])->name('returns_report');

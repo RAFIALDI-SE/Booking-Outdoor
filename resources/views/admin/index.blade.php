@@ -115,7 +115,7 @@
                         <p class="card-text text-muted small">Kelola gambar, judul, dan deskripsi di halaman utama</p>
                     </div>
                 </div>
-                <a href="#" class="btn-kelola mt-auto">
+                <a href="{{route('returns_index')}}" class="btn-kelola mt-auto">
                     Kelola <i class="fas fa-arrow-circle-right ms-1"></i>
                 </a>
             </div>
