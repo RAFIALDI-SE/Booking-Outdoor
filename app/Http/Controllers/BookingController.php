@@ -125,4 +125,48 @@ class BookingController extends Controller
             })->toArray()
         ];
     }
+    public function repay($code)
+    {
+        $transaction = Transaction::where('code', $code)
+            ->with('items.product', 'user')
+            ->firstOrFail();
+
+
+        $newOrderId = 'TRX-' . $transaction->id . '-' . rand(100000, 999999);
+
+        $transaction->update([
+            'code' => $newOrderId
+        ]);
+
+        $payload = $this->buildMidtransPayload($transaction);
+
+        try {
+            $snapToken = \Midtrans\Snap::getSnapToken($payload);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Gagal generate Snap Token: ' . $e->getMessage()
+            ], 500);
+        }
+
+        return response()->json([
+            'snap_token' => $snapToken,
+            'order_id' => $newOrderId,
+        ]);
+    }
+
+
+
+    public function history()
+    {
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+
+
+        $transactions = $user->transactions()
+                             ->orderByDesc('created_at')
+                             ->get(['id', 'code', 'total_amount', 'payment_status', 'created_at', 'payment_expired_at', 'snap_token']);
+
+        return view('members.history_payment', compact('transactions'));
+    }
+
 }

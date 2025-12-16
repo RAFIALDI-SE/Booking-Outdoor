@@ -31,6 +31,9 @@ Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart_
 Route::post('/cart/rent-days', [CartController::class, 'updateDays'])->name('cart_updateDays');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart_add');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart_delete');
+    
+Route::post('/repay/{code}', [BookingController::class, 'repay'])->name('repay');
+Route::get('/payment/history', [BookingController::class, 'history'])->name('history_payment');
 
 Route::post('/checkout/store', [BookingController::class, 'checkoutStore'])->name('checkoutStore');
 

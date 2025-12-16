@@ -48,7 +48,7 @@
                         {{-- Item Dropdown sesuai Group 31.png --}}
                         <li><a class="dropdown-item" href="{{route('profile_edit', )}}"><i class="fas fa-user me-2" style="width: 1rem;"></i> Profil</a></li>
                         <li><a class="dropdown-item" href="{{route('cart_index')}}"><i class="fas fa-shopping-basket me-2" style="width: 1rem;"></i> Keranjang</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2" style="width: 1rem;"></i> Riwayat</a></li>
+                        <li><a class="dropdown-item" href="{{ route('history_payment') }}"><i class="fas fa-history me-2" style="width: 1rem;"></i> Riwayat</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             {{-- Logout menggunakan Form POST --}}
