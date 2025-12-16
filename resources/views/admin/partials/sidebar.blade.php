@@ -22,7 +22,7 @@
             <i class="fas fa-box me-2"></i> Produk
         </a>
 
-        <a href="#" class="list-group-item">
+        <a href="{{route('admin_transation_index')}}" class="list-group-item @if(Route::is('admin_transation_*')) active @endif">
             <i class="fas fa-exchange-alt me-2"></i> Transaksi
         </a>
 
