@@ -21,6 +21,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'registerStore'])->name('registerStore');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::middleware(['isMember'])->group(function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/products/all', [ProductController::class, 'all_products'])->name('products_all');
 
@@ -39,6 +40,7 @@ Route::get('/payment/history', [BookingController::class, 'history'])->name('his
 Route::get('/payment/history/{code}', [BookingController::class, 'historyDetail'])->name('history_payment_detail');
 
 Route::post('/checkout/store', [BookingController::class, 'checkoutStore'])->name('checkoutStore');
+});
 
 Route::get('/dashboard', function () {
     return view('admin.index');
