@@ -36,6 +36,7 @@ Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart_dele
     
 Route::post('/repay/{code}', [BookingController::class, 'repay'])->name('repay');
 Route::get('/payment/history', [BookingController::class, 'history'])->name('history_payment');
+Route::get('/payment/history/{code}', [BookingController::class, 'historyDetail'])->name('history_payment_detail');
 
 Route::post('/checkout/store', [BookingController::class, 'checkoutStore'])->name('checkoutStore');
 
