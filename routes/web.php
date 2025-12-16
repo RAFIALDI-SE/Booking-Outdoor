@@ -34,13 +34,16 @@ Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart_
 Route::post('/cart/rent-days', [CartController::class, 'updateDays'])->name('cart_updateDays');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart_add');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart_delete');
-    
+
 Route::post('/repay/{code}', [BookingController::class, 'repay'])->name('repay');
 Route::get('/payment/history', [BookingController::class, 'history'])->name('history_payment');
 Route::get('/payment/history/{code}', [BookingController::class, 'historyDetail'])->name('history_payment_detail');
 
 Route::post('/checkout/store', [BookingController::class, 'checkoutStore'])->name('checkoutStore');
 });
+
+
+Route::middleware(['isAdmin'])->group(function () {
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -84,3 +87,5 @@ Route::post('/process/{code}', [ReturnController::class, 'processCheck'])->name(
 Route::get('/fine', [ReturnController::class, 'inputFine'])->name('returns_input_fine');
 Route::post('/finalize-fine', [ReturnController::class, 'finalizeFine'])->name('returns_finalize_fine');
 Route::get('/report/{code}', [ReturnController::class, 'report'])->name('returns_report');
+
+});
